@@ -14,7 +14,7 @@
 		37F10D921700C4B2006D769F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D911700C4B2006D769F /* SenTestingKit.framework */; };
 		37F10D941700C4B2006D769F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D931700C4B2006D769F /* UIKit.framework */; };
 		37F10D951700C4B2006D769F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D821700C4B1006D769F /* Foundation.framework */; };
-		37F10D981700C4B2006D769F /* libQueueProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D7F1700C4B1006D769F /* libQueueProcessor.a */; };
+		37F10D981700C4B2006D769F /* libJHQueueProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D7F1700C4B1006D769F /* libJHQueueProcessor.a */; };
 		37F10D9E1700C4B2006D769F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37F10D9C1700C4B2006D769F /* InfoPlist.strings */; };
 		37F10DA11700C4B2006D769F /* JHQueueProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */; };
 /* End PBXBuildFile section */
@@ -44,15 +44,15 @@
 
 /* Begin PBXFileReference section */
 		37D96FD2170227E90079A02D /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
-		37F10D7F1700C4B1006D769F /* libQueueProcessor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQueueProcessor.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F10D7F1700C4B1006D769F /* libJHQueueProcessor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJHQueueProcessor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D821700C4B1006D769F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		37F10D861700C4B1006D769F /* QueueProcessor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueueProcessor-Prefix.pch"; sourceTree = "<group>"; };
+		37F10D861700C4B1006D769F /* JHQueueProcessor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JHQueueProcessor-Prefix.pch"; sourceTree = "<group>"; };
 		37F10D871700C4B1006D769F /* JHQueueProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessor.h; sourceTree = "<group>"; };
 		37F10D891700C4B1006D769F /* JHQueueProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessor.m; sourceTree = "<group>"; };
-		37F10D901700C4B2006D769F /* QueueProcessorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueProcessorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37F10D901700C4B2006D769F /* JHQueueProcessorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHQueueProcessorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D911700C4B2006D769F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		37F10D931700C4B2006D769F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		37F10D9B1700C4B2006D769F /* QueueProcessorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QueueProcessorTests-Info.plist"; sourceTree = "<group>"; };
+		37F10D9B1700C4B2006D769F /* JHQueueProcessorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JHQueueProcessorTests-Info.plist"; sourceTree = "<group>"; };
 		37F10D9D1700C4B2006D769F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessorTests.h; sourceTree = "<group>"; };
 		37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessorTests.m; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 				37F10D921700C4B2006D769F /* SenTestingKit.framework in Frameworks */,
 				37F10D941700C4B2006D769F /* UIKit.framework in Frameworks */,
 				37F10D951700C4B2006D769F /* Foundation.framework in Frameworks */,
-				37F10D981700C4B2006D769F /* libQueueProcessor.a in Frameworks */,
+				37F10D981700C4B2006D769F /* libJHQueueProcessor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,8 +106,8 @@
 		37F10D801700C4B1006D769F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37F10D7F1700C4B1006D769F /* libQueueProcessor.a */,
-				37F10D901700C4B2006D769F /* QueueProcessorTests.octest */,
+				37F10D7F1700C4B1006D769F /* libJHQueueProcessor.a */,
+				37F10D901700C4B2006D769F /* JHQueueProcessorTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,7 +137,7 @@
 		37F10D851700C4B1006D769F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				37F10D861700C4B1006D769F /* QueueProcessor-Prefix.pch */,
+				37F10D861700C4B1006D769F /* JHQueueProcessor-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 		37F10D9A1700C4B2006D769F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				37F10D9B1700C4B2006D769F /* QueueProcessorTests-Info.plist */,
+				37F10D9B1700C4B2006D769F /* JHQueueProcessorTests-Info.plist */,
 				37F10D9C1700C4B2006D769F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -164,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		37F10D7E1700C4B1006D769F /* QueueProcessor */ = {
+		37F10D7E1700C4B1006D769F /* JHQueueProcessor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37F10DA41700C4B2006D769F /* Build configuration list for PBXNativeTarget "QueueProcessor" */;
+			buildConfigurationList = 37F10DA41700C4B2006D769F /* Build configuration list for PBXNativeTarget "JHQueueProcessor" */;
 			buildPhases = (
 				37F10D7B1700C4B1006D769F /* Sources */,
 				37F10D7C1700C4B1006D769F /* Frameworks */,
@@ -176,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = QueueProcessor;
+			name = JHQueueProcessor;
 			productName = QueueProcessor;
-			productReference = 37F10D7F1700C4B1006D769F /* libQueueProcessor.a */;
+			productReference = 37F10D7F1700C4B1006D769F /* libJHQueueProcessor.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		37F10D8F1700C4B2006D769F /* QueueProcessorTests */ = {
+		37F10D8F1700C4B2006D769F /* JHQueueProcessorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 37F10DA71700C4B2006D769F /* Build configuration list for PBXNativeTarget "QueueProcessorTests" */;
+			buildConfigurationList = 37F10DA71700C4B2006D769F /* Build configuration list for PBXNativeTarget "JHQueueProcessorTests" */;
 			buildPhases = (
 				37F10D8B1700C4B2006D769F /* Sources */,
 				37F10D8C1700C4B2006D769F /* Frameworks */,
@@ -195,9 +195,9 @@
 			dependencies = (
 				37F10D971700C4B2006D769F /* PBXTargetDependency */,
 			);
-			name = QueueProcessorTests;
+			name = JHQueueProcessorTests;
 			productName = QueueProcessorTests;
-			productReference = 37F10D901700C4B2006D769F /* QueueProcessorTests.octest */;
+			productReference = 37F10D901700C4B2006D769F /* JHQueueProcessorTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -209,7 +209,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = jphollanti;
 			};
-			buildConfigurationList = 37F10D791700C4B1006D769F /* Build configuration list for PBXProject "QueueProcessor" */;
+			buildConfigurationList = 37F10D791700C4B1006D769F /* Build configuration list for PBXProject "JHQueueProcessor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -221,8 +221,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37F10D7E1700C4B1006D769F /* QueueProcessor */,
-				37F10D8F1700C4B2006D769F /* QueueProcessorTests */,
+				37F10D7E1700C4B1006D769F /* JHQueueProcessor */,
+				37F10D8F1700C4B2006D769F /* JHQueueProcessorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +276,7 @@
 /* Begin PBXTargetDependency section */
 		37F10D971700C4B2006D769F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 37F10D7E1700C4B1006D769F /* QueueProcessor */;
+			target = 37F10D7E1700C4B1006D769F /* JHQueueProcessor */;
 			targetProxy = 37F10D961700C4B2006D769F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -345,13 +345,13 @@
 			buildSettings = {
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JHQueueProcessor;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -362,13 +362,13 @@
 			buildSettings = {
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JHQueueProcessor;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -384,7 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
-				INFOPLIST_FILE = "QueueProcessorTests/QueueProcessorTests-Info.plist";
+				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
@@ -394,7 +394,7 @@
 					"-force_load",
 					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JHQueueProcessorTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -409,7 +409,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
-				INFOPLIST_FILE = "QueueProcessorTests/QueueProcessorTests-Info.plist";
+				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
@@ -419,7 +419,7 @@
 					"-force_load",
 					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = JHQueueProcessorTests;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -427,7 +427,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		37F10D791700C4B1006D769F /* Build configuration list for PBXProject "QueueProcessor" */ = {
+		37F10D791700C4B1006D769F /* Build configuration list for PBXProject "JHQueueProcessor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37F10DA21700C4B2006D769F /* Debug */,
@@ -436,7 +436,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37F10DA41700C4B2006D769F /* Build configuration list for PBXNativeTarget "QueueProcessor" */ = {
+		37F10DA41700C4B2006D769F /* Build configuration list for PBXNativeTarget "JHQueueProcessor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37F10DA51700C4B2006D769F /* Debug */,
@@ -445,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		37F10DA71700C4B2006D769F /* Build configuration list for PBXNativeTarget "QueueProcessorTests" */ = {
+		37F10DA71700C4B2006D769F /* Build configuration list for PBXNativeTarget "JHQueueProcessorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				37F10DA81700C4B2006D769F /* Debug */,
