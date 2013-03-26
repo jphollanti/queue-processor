@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37D96FD517022C140079A02D /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D96FD2170227E90079A02D /* libOCMock.a */; };
 		37F10D831700C4B1006D769F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D821700C4B1006D769F /* Foundation.framework */; };
-		37F10D881700C4B1006D769F /* QueueProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37F10D871700C4B1006D769F /* QueueProcessor.h */; };
-		37F10D8A1700C4B1006D769F /* QueueProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F10D891700C4B1006D769F /* QueueProcessor.m */; };
+		37F10D881700C4B1006D769F /* JHQueueProcessor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 37F10D871700C4B1006D769F /* JHQueueProcessor.h */; };
+		37F10D8A1700C4B1006D769F /* JHQueueProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F10D891700C4B1006D769F /* JHQueueProcessor.m */; };
 		37F10D921700C4B2006D769F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D911700C4B2006D769F /* SenTestingKit.framework */; };
 		37F10D941700C4B2006D769F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D931700C4B2006D769F /* UIKit.framework */; };
 		37F10D951700C4B2006D769F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D821700C4B1006D769F /* Foundation.framework */; };
 		37F10D981700C4B2006D769F /* libQueueProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F10D7F1700C4B1006D769F /* libQueueProcessor.a */; };
 		37F10D9E1700C4B2006D769F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37F10D9C1700C4B2006D769F /* InfoPlist.strings */; };
-		37F10DA11700C4B2006D769F /* QueueProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F10DA01700C4B2006D769F /* QueueProcessorTests.m */; };
+		37F10DA11700C4B2006D769F /* JHQueueProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,27 +36,28 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				37F10D881700C4B1006D769F /* QueueProcessor.h in CopyFiles */,
+				37F10D881700C4B1006D769F /* JHQueueProcessor.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		37D96FD2170227E90079A02D /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
 		37F10D7F1700C4B1006D769F /* libQueueProcessor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQueueProcessor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D821700C4B1006D769F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		37F10D861700C4B1006D769F /* QueueProcessor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueueProcessor-Prefix.pch"; sourceTree = "<group>"; };
-		37F10D871700C4B1006D769F /* QueueProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueProcessor.h; sourceTree = "<group>"; };
-		37F10D891700C4B1006D769F /* QueueProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueueProcessor.m; sourceTree = "<group>"; };
+		37F10D871700C4B1006D769F /* JHQueueProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessor.h; sourceTree = "<group>"; };
+		37F10D891700C4B1006D769F /* JHQueueProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessor.m; sourceTree = "<group>"; };
 		37F10D901700C4B2006D769F /* QueueProcessorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QueueProcessorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D911700C4B2006D769F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		37F10D931700C4B2006D769F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		37F10D9B1700C4B2006D769F /* QueueProcessorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QueueProcessorTests-Info.plist"; sourceTree = "<group>"; };
 		37F10D9D1700C4B2006D769F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		37F10D9F1700C4B2006D769F /* QueueProcessorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueProcessorTests.h; sourceTree = "<group>"; };
-		37F10DA01700C4B2006D769F /* QueueProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QueueProcessorTests.m; sourceTree = "<group>"; };
-		37F10DAA1700C62E006D769F /* QueueItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueItem.h; sourceTree = "<group>"; };
-		37F10DAB1700C798006D769F /* QueueListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueueListener.h; sourceTree = "<group>"; };
+		37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessorTests.h; sourceTree = "<group>"; };
+		37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessorTests.m; sourceTree = "<group>"; };
+		37F10DAA1700C62E006D769F /* JHQueueItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueItem.h; sourceTree = "<group>"; };
+		37F10DAB1700C798006D769F /* JHQueueListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueListener.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D96FD517022C140079A02D /* libOCMock.a in Frameworks */,
 				37F10D921700C4B2006D769F /* SenTestingKit.framework in Frameworks */,
 				37F10D941700C4B2006D769F /* UIKit.framework in Frameworks */,
 				37F10D951700C4B2006D769F /* Foundation.framework in Frameworks */,
@@ -81,9 +84,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37CF5732170236A700588DF8 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				37D96FD2170227E90079A02D /* libOCMock.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 		37F10D741700C4B1006D769F = {
 			isa = PBXGroup;
 			children = (
+				37CF5732170236A700588DF8 /* lib */,
 				37F10D841700C4B1006D769F /* QueueProcessor */,
 				37F10D991700C4B2006D769F /* QueueProcessorTests */,
 				37F10D811700C4B1006D769F /* Frameworks */,
@@ -113,10 +125,10 @@
 		37F10D841700C4B1006D769F /* QueueProcessor */ = {
 			isa = PBXGroup;
 			children = (
-				37F10D871700C4B1006D769F /* QueueProcessor.h */,
-				37F10D891700C4B1006D769F /* QueueProcessor.m */,
-				37F10DAA1700C62E006D769F /* QueueItem.h */,
-				37F10DAB1700C798006D769F /* QueueListener.h */,
+				37F10D871700C4B1006D769F /* JHQueueProcessor.h */,
+				37F10D891700C4B1006D769F /* JHQueueProcessor.m */,
+				37F10DAA1700C62E006D769F /* JHQueueItem.h */,
+				37F10DAB1700C798006D769F /* JHQueueListener.h */,
 				37F10D851700C4B1006D769F /* Supporting Files */,
 			);
 			path = QueueProcessor;
@@ -133,8 +145,8 @@
 		37F10D991700C4B2006D769F /* QueueProcessorTests */ = {
 			isa = PBXGroup;
 			children = (
-				37F10D9F1700C4B2006D769F /* QueueProcessorTests.h */,
-				37F10DA01700C4B2006D769F /* QueueProcessorTests.m */,
+				37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */,
+				37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */,
 				37F10D9A1700C4B2006D769F /* Supporting Files */,
 			);
 			path = QueueProcessorTests;
@@ -247,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F10D8A1700C4B1006D769F /* QueueProcessor.m in Sources */,
+				37F10D8A1700C4B1006D769F /* JHQueueProcessor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37F10DA11700C4B2006D769F /* QueueProcessorTests.m in Sources */,
+				37F10DA11700C4B2006D769F /* JHQueueProcessorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,9 +346,14 @@
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -346,9 +363,14 @@
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -361,7 +383,17 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
 				INFOPLIST_FILE = "QueueProcessorTests/QueueProcessorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -376,7 +408,17 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
 				INFOPLIST_FILE = "QueueProcessorTests/QueueProcessorTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/usr/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -401,6 +443,7 @@
 				37F10DA61700C4B2006D769F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37F10DA71700C4B2006D769F /* Build configuration list for PBXNativeTarget "QueueProcessorTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +452,7 @@
 				37F10DA91700C4B2006D769F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

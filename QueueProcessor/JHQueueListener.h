@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol QueueListener <NSObject>
+@protocol JHQueueListener <NSObject>
 - (void) startedProcessingQueue;
 - (void) finishedProcessingQueue;
-- (void) startedToProcessQueueItem:(id <QueueItem>)queueItem;
-- (void) finishedProcessingQueueItem:(id <QueueItem>)queueItem;
+- (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem;
+- (void) finishedProcessingQueueItem:(id <JHQueueItem>)queueItem;
 @end

@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QueueItem.h"
-#import "QueueListener.h"
+#import "JHQueueItem.h"
+#import "JHQueueListener.h"
 
-@interface QueueProcessor : NSObject<QueueListener>
+@interface JHQueueProcessor : NSObject<JHQueueListener>
 @property (nonatomic, retain) NSMutableArray *listeners;
 @property (nonatomic) bool inProgress;
-+ (QueueProcessor *) instance;
++ (JHQueueProcessor *) instance;
 
 - (BOOL) isInProgress;
 - (void) processQueue:(NSArray*)queueItems;
 - (void) executeQueue:(NSArray*)queueItems;
-- (void) addListener:(id <QueueListener>)listener;
+- (void) addListener:(id <JHQueueListener>)listener;
 
 @end

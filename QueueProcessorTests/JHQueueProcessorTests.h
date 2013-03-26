@@ -7,7 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <OCMock/OCMock.h>
 
-@interface QueueProcessorTests : SenTestCase
+@interface JHQueueProcessorTests : SenTestCase
 
 @end

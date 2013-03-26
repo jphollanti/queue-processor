@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 jphollanti. 
 //
 
-#import "QueueProcessor.h"
-#import "QueueItem.h"
+#import "JHQueueProcessor.h"
+#import "JHQueueItem.h"
 
-@implementation QueueProcessor
+@implementation JHQueueProcessor
 
-static QueueProcessor *sharedSingleton;
+static JHQueueProcessor *sharedSingleton;
 
 @synthesize inProgress, listeners;
 pthread_mutex_t queueLock;
@@ -22,11 +22,11 @@ pthread_mutex_t queueLock;
   if(!initialized)
   {
     initialized = YES;
-    sharedSingleton = [[QueueProcessor alloc] init];
+    sharedSingleton = [[JHQueueProcessor alloc] init];
   }
 }
 
-+ (QueueProcessor *) instance {
++ (JHQueueProcessor *) instance {
   return sharedSingleton;
 }
 
@@ -40,7 +40,7 @@ pthread_mutex_t queueLock;
 
 // Delegates processing of queue elements to a dedicated thread. 
 -(void) processQueue:(NSArray*)queueItems {
-  [self performSelectorInBackground:@selector(executeQueue) withObject:nil];
+  [self performSelectorInBackground:@selector(executeQueue:) withObject:queueItems];
 }
 
 // Processes the queue items in sequence.
@@ -53,7 +53,7 @@ pthread_mutex_t queueLock;
   
   [self startedProcessingQueue];
   
-  for (id<QueueItem> item in queueItems) {
+  for (id<JHQueueItem> item in queueItems) {
     // http://stackoverflow.com/questions/9778646/objective-c-uiimagepngrepresentation-memory-issue-using-arc
     @autoreleasepool {
       @try {
@@ -73,39 +73,39 @@ pthread_mutex_t queueLock;
   inProgress = NO;
 }
 
-- (BOOL) isSynchronizeRunning {
+- (BOOL) isInProgress {
   return inProgress;
 }
 
-- (void) addListener:(id <QueueListener>)listener {
+- (void) addListener:(id <JHQueueListener>)listener {
   [listeners addObject:listener];
 }
 
 - (void) startedProcessingQueue {
   dispatch_async(dispatch_get_main_queue(), ^{
-    for (id <QueueListener> listener in listeners) {
-      
+    for (id <JHQueueListener> listener in listeners) {
+      [listener startedProcessingQueue];
     }
   });
 }
 - (void) finishedProcessingQueue {
   dispatch_async(dispatch_get_main_queue(), ^{
-    for (id <QueueListener> listener in listeners) {
-      
+    for (id <JHQueueListener> listener in listeners) {
+      [listener finishedProcessingQueue];
     }
   });
 }
-- (void) startedToProcessQueueItem:(id <QueueItem>)queueItem {
+- (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem {
   dispatch_async(dispatch_get_main_queue(), ^{
-    for (id <QueueListener> listener in listeners) {
-      
+    for (id <JHQueueListener> listener in listeners) {
+      [listener startedToProcessQueueItem:queueItem];
     }
   });
 }
-- (void) finishedProcessingQueueItem:(id <QueueItem>)queueItem {
+- (void) finishedProcessingQueueItem:(id <JHQueueItem>)queueItem {
   dispatch_async(dispatch_get_main_queue(), ^{
-    for (id <QueueListener> listener in listeners) {
-      
+    for (id <JHQueueListener> listener in listeners) {
+      [listener finishedProcessingQueueItem:queueItem];
     }
   });
 }

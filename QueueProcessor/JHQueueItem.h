@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol QueueItem <NSObject>
+@protocol JHQueueItem <NSObject>
 -(BOOL)process;
 @end
