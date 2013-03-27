@@ -54,6 +54,7 @@
   [queue processQueueAsynchronously:queueItems];
   
   BOOL wentToThread = NO;
+  // http://stackoverflow.com/questions/3615939/wait-for-code-to-finish-execution
   while ([queue isInProgress]) {
     wentToThread = YES;
     // This executes another run loop.
@@ -73,7 +74,7 @@
   
   [queue processQueue:queueItems];
   [queueItem verify];
-  //[listener verify];
+  [listener verify];
 }
 
 @end
