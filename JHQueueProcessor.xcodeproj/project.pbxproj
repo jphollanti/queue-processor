@@ -382,7 +382,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
 				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -407,7 +407,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/QueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
 				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

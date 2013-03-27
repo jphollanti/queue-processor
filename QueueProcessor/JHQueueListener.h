@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JHQueueItem.h"
 
 @protocol JHQueueListener <NSObject>
 - (void) startedProcessingQueue;

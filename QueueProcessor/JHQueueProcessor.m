@@ -39,38 +39,42 @@ pthread_mutex_t queueLock;
 }
 
 // Delegates processing of queue elements to a dedicated thread. 
--(void) processQueue:(NSArray*)queueItems {
-  [self performSelectorInBackground:@selector(executeQueue:) withObject:queueItems];
+-(void) processQueueAsynchronously:(NSArray*)queueItems {
+  [self performSelectorInBackground:@selector(processQueue:) withObject:queueItems];
 }
 
 // Processes the queue items in sequence.
--(void) executeQueue:(NSArray*)queueItems {
+-(void) processQueue:(NSArray*)queueItems {
   if ([self isInProgress]) {
     [NSException raise:@"Queue is busy" format:@"Queue is busy"];
   }
-  inProgress = YES;
-  pthread_mutex_lock(&queueLock);
   
-  [self startedProcessingQueue];
-  
-  for (id<JHQueueItem> item in queueItems) {
-    // http://stackoverflow.com/questions/9778646/objective-c-uiimagepngrepresentation-memory-issue-using-arc
-    @autoreleasepool {
-      @try {
-        [self startedToProcessQueueItem:item];
-        if (![item process]) {
-          [NSException raise:@"Failed to process queue item" format:@"Failed to process queue item %@", item];
+  @try {
+    inProgress = YES;
+    pthread_mutex_lock(&queueLock);
+    
+    [self startedProcessingQueue];
+    
+    for (id<JHQueueItem> item in queueItems) {
+      // http://stackoverflow.com/questions/9778646/objective-c-uiimagepngrepresentation-memory-issue-using-arc
+      @autoreleasepool {
+        @try {
+          [self startedToProcessQueueItem:item];
+          if (![item process]) {
+            [NSException raise:@"Failed to process queue item" format:@"Failed to process queue item %@", item];
+          }
+        }
+        @finally {
+          [self finishedProcessingQueueItem:item];
         }
       }
-      @finally {
-        [self finishedProcessingQueueItem:item];
-      }
     }
+    
+  } @finally {
+    [self finishedProcessingQueue];
+    pthread_mutex_unlock(&queueLock);
+    inProgress = NO;
   }
-  
-  [self finishedProcessingQueue];
-  pthread_mutex_unlock(&queueLock);
-  inProgress = NO;
 }
 
 - (BOOL) isInProgress {
@@ -81,6 +85,10 @@ pthread_mutex_t queueLock;
   [listeners addObject:listener];
 }
 
+- (void) removeAllListeners {
+  [listeners removeAllObjects];
+}
+
 - (void) startedProcessingQueue {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
@@ -88,6 +96,7 @@ pthread_mutex_t queueLock;
     }
   });
 }
+
 - (void) finishedProcessingQueue {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
@@ -95,6 +104,7 @@ pthread_mutex_t queueLock;
     }
   });
 }
+
 - (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
@@ -102,6 +112,7 @@ pthread_mutex_t queueLock;
     }
   });
 }
+
 - (void) finishedProcessingQueueItem:(id <JHQueueItem>)queueItem {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {

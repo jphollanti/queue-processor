@@ -16,8 +16,9 @@
 + (JHQueueProcessor *) instance;
 
 - (BOOL) isInProgress;
+- (void) processQueueAsynchronously:(NSArray*)queueItems;
 - (void) processQueue:(NSArray*)queueItems;
-- (void) executeQueue:(NSArray*)queueItems;
 - (void) addListener:(id <JHQueueListener>)listener;
+- (void) removeAllListeners;
 
 @end
