@@ -43,15 +43,18 @@
   NSAssert(queue != nil, @"Failed to initiate queue");
 }
 
-- (void)testAsynchronousQueueProcessing {  
-  [[[[queueItem stub] andDo:^(NSInvocation *invocation) {
-    
-    // Sleep for a while to ensure verification of thread execution
-    [NSThread sleepForTimeInterval:2];
+- (void)testAsynchronousQueueProcessing {
+  [[[[queueItem stub] andDo:^(NSInvocation * test) {
+    //for (int i=0; i<5000; i++) {
+    //  NSLog(@"blah!");
+    //}
+    //[NSThread sleepForTimeInterval:2];
     
   }] andReturnValue:OCMOCK_VALUE((BOOL){YES})] process];
   
   [queue processQueueAsynchronously:queueItems];
+  
+  usleep(10000);
   
   BOOL wentToThread = NO;
   // http://stackoverflow.com/questions/3615939/wait-for-code-to-finish-execution

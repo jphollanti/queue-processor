@@ -50,8 +50,8 @@ pthread_mutex_t queueLock;
   }
   
   @try {
-    inProgress = YES;
     pthread_mutex_lock(&queueLock);
+    inProgress = YES;
     
     [self startedProcessingQueue];
     
@@ -63,7 +63,7 @@ pthread_mutex_t queueLock;
           if (![item process]) {
             [NSException raise:@"Failed to process queue item" format:@"Failed to process queue item %@", item];
           }
-        }
+        }   
         @finally {
           [self finishedProcessingQueueItem:item];
         }
@@ -71,9 +71,10 @@ pthread_mutex_t queueLock;
     }
     
   } @finally {
+    [NSThread sleepForTimeInterval:2];
     [self finishedProcessingQueue];
-    pthread_mutex_unlock(&queueLock);
     inProgress = NO;
+    pthread_mutex_unlock(&queueLock);
   }
 }
 
@@ -90,35 +91,60 @@ pthread_mutex_t queueLock;
 }
 
 - (void) startedProcessingQueue {
+    if ([NSThread isMainThread]) {
+      for (id <JHQueueListener> listener in listeners) {
+        [listener startedProcessingQueue];
+      }
+    } else {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
       [listener startedProcessingQueue];
     }
   });
+    }
 }
 
 - (void) finishedProcessingQueue {
+  if ([NSThread isMainThread]) {
+    for (id <JHQueueListener> listener in listeners) {
+      [listener finishedProcessingQueue];
+    }
+    
+  } else {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
       [listener finishedProcessingQueue];
     }
   });
+  }
 }
 
 - (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem {
+    if ([NSThread isMainThread]) {
+      for (id <JHQueueListener> listener in listeners) {
+        [listener startedToProcessQueueItem:queueItem];
+      }
+    } else {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
       [listener startedToProcessQueueItem:queueItem];
     }
   });
+    }
 }
 
 - (void) finishedProcessingQueueItem:(id <JHQueueItem>)queueItem {
+      if ([NSThread isMainThread]) {
+        for (id <JHQueueListener> listener in listeners) {
+          [listener finishedProcessingQueueItem:queueItem];
+        }
+      } else {
   dispatch_async(dispatch_get_main_queue(), ^{
     for (id <JHQueueListener> listener in listeners) {
       [listener finishedProcessingQueueItem:queueItem];
     }
   });
+      }
 }
 
 @end
