@@ -16,9 +16,11 @@ Example:
     [queue processQueueAsynchronously:queueItems];
 
 JHQueueItem protocol defines only one method: 
+
     - (BOOL) process;
 
 Listeners receive the following events: 
+
     - (void) startedProcessingQueue;
     - (void) finishedProcessingQueue;
     - (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem;
