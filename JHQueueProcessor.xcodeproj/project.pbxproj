@@ -46,18 +46,18 @@
 		37D96FD2170227E90079A02D /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = usr/lib/libOCMock.a; sourceTree = "<group>"; };
 		37F10D7F1700C4B1006D769F /* libJHQueueProcessor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJHQueueProcessor.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D821700C4B1006D769F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		37F10D861700C4B1006D769F /* JHQueueProcessor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JHQueueProcessor-Prefix.pch"; sourceTree = "<group>"; };
-		37F10D871700C4B1006D769F /* JHQueueProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessor.h; sourceTree = "<group>"; };
-		37F10D891700C4B1006D769F /* JHQueueProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessor.m; sourceTree = "<group>"; };
+		37F10D861700C4B1006D769F /* JHQueueProcessor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "JHQueueProcessor-Prefix.pch"; path = "JHQueueProcessor/JHQueueProcessor-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		37F10D871700C4B1006D769F /* JHQueueProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHQueueProcessor.h; path = JHQueueProcessor/JHQueueProcessor.h; sourceTree = SOURCE_ROOT; };
+		37F10D891700C4B1006D769F /* JHQueueProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JHQueueProcessor.m; path = JHQueueProcessor/JHQueueProcessor.m; sourceTree = SOURCE_ROOT; };
 		37F10D901700C4B2006D769F /* JHQueueProcessorTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHQueueProcessorTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F10D911700C4B2006D769F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		37F10D931700C4B2006D769F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		37F10D9B1700C4B2006D769F /* JHQueueProcessorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JHQueueProcessorTests-Info.plist"; sourceTree = "<group>"; };
+		37F10D9B1700C4B2006D769F /* JHQueueProcessorTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "JHQueueProcessorTests-Info.plist"; path = "JHQueueProcessorTests/JHQueueProcessorTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		37F10D9D1700C4B2006D769F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueProcessorTests.h; sourceTree = "<group>"; };
-		37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JHQueueProcessorTests.m; sourceTree = "<group>"; };
-		37F10DAA1700C62E006D769F /* JHQueueItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueItem.h; sourceTree = "<group>"; };
-		37F10DAB1700C798006D769F /* JHQueueListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JHQueueListener.h; sourceTree = "<group>"; };
+		37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHQueueProcessorTests.h; path = JHQueueProcessorTests/JHQueueProcessorTests.h; sourceTree = SOURCE_ROOT; };
+		37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JHQueueProcessorTests.m; path = JHQueueProcessorTests/JHQueueProcessorTests.m; sourceTree = SOURCE_ROOT; };
+		37F10DAA1700C62E006D769F /* JHQueueItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHQueueItem.h; path = JHQueueProcessor/JHQueueItem.h; sourceTree = SOURCE_ROOT; };
+		37F10DAB1700C798006D769F /* JHQueueListener.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JHQueueListener.h; path = JHQueueProcessor/JHQueueListener.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +290,8 @@
 				37F10D9D1700C4B2006D769F /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
+			path = JHQueueProcessorTests;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
@@ -347,7 +348,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "JHQueueProcessor/JHQueueProcessor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
@@ -364,7 +365,7 @@
 			buildSettings = {
 				DSTROOT = /tmp/QueueProcessor.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "JHQueueProcessor/JHQueueProcessor-Prefix.pch";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
@@ -384,9 +385,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "JHQueueProcessor/JHQueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
-				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
+				INFOPLIST_FILE = "JHQueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
@@ -409,9 +410,9 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "QueueProcessor/JHQueueProcessor-Prefix.pch";
+				GCC_PREFIX_HEADER = "JHQueueProcessor/JHQueueProcessor-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/usr/include\"";
-				INFOPLIST_FILE = "QueueProcessorTests/JHQueueProcessorTests-Info.plist";
+				INFOPLIST_FILE = "JHQueueProcessorTests/JHQueueProcessorTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/usr/lib\"",
