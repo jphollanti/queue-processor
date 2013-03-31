@@ -96,8 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				37CF5732170236A700588DF8 /* lib */,
-				37F10D841700C4B1006D769F /* QueueProcessor */,
-				37F10D991700C4B2006D769F /* QueueProcessorTests */,
+				37F10D841700C4B1006D769F /* JHQueueProcessor */,
+				37F10D991700C4B2006D769F /* JHQueueProcessorTests */,
 				37F10D811700C4B1006D769F /* Frameworks */,
 				37F10D801700C4B1006D769F /* Products */,
 			);
@@ -122,7 +122,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		37F10D841700C4B1006D769F /* QueueProcessor */ = {
+		37F10D841700C4B1006D769F /* JHQueueProcessor */ = {
 			isa = PBXGroup;
 			children = (
 				37F10D871700C4B1006D769F /* JHQueueProcessor.h */,
@@ -131,6 +131,7 @@
 				37F10DAB1700C798006D769F /* JHQueueListener.h */,
 				37F10D851700C4B1006D769F /* Supporting Files */,
 			);
+			name = JHQueueProcessor;
 			path = QueueProcessor;
 			sourceTree = "<group>";
 		};
@@ -142,13 +143,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		37F10D991700C4B2006D769F /* QueueProcessorTests */ = {
+		37F10D991700C4B2006D769F /* JHQueueProcessorTests */ = {
 			isa = PBXGroup;
 			children = (
 				37F10D9F1700C4B2006D769F /* JHQueueProcessorTests.h */,
 				37F10DA01700C4B2006D769F /* JHQueueProcessorTests.m */,
 				37F10D9A1700C4B2006D769F /* Supporting Files */,
 			);
+			name = JHQueueProcessorTests;
 			path = QueueProcessorTests;
 			sourceTree = "<group>";
 		};
