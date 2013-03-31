@@ -14,7 +14,6 @@
 static JHQueueProcessor *sharedSingleton;
 
 @synthesize inProgress, listeners;
-pthread_mutex_t queueLock;
 
 + (void)initialize
 {
@@ -32,7 +31,6 @@ pthread_mutex_t queueLock;
 
 - (id) init {
   self = [super init];
-  pthread_mutex_init(&queueLock, NULL);
   inProgress = NO;
   listeners = [[NSMutableArray alloc] init];
   return self;
@@ -49,32 +47,32 @@ pthread_mutex_t queueLock;
     [NSException raise:@"Queue is busy" format:@"Queue is busy"];
   }
   
-  @try {
-    pthread_mutex_lock(&queueLock);
-    inProgress = YES;
+  // http://stackoverflow.com/questions/1215330/how-does-synchronized-lock-unlock-in-objective-c
+  @synchronized(self) {
+    @try {
+      inProgress = YES;
     
-    [self startedProcessingQueue];
+      [self startedProcessingQueue];
     
-    for (id<JHQueueItem> item in queueItems) {
-      // http://stackoverflow.com/questions/9778646/objective-c-uiimagepngrepresentation-memory-issue-using-arc
-      @autoreleasepool {
-        @try {
-          [self startedToProcessQueueItem:item];
-          if (![item process]) {
-            [NSException raise:@"Failed to process queue item" format:@"Failed to process queue item %@", item];
+      for (id<JHQueueItem> item in queueItems) {
+        // http://stackoverflow.com/questions/9778646/objective-c-uiimagepngrepresentation-memory-issue-using-arc
+        @autoreleasepool {
+          @try {
+            [self startedToProcessQueueItem:item];
+            if (![item process]) {
+              [NSException raise:@"Failed to process queue item" format:@"Failed to process queue item %@", item];
+            }
           }
-        }   
-        @finally {
-          [self finishedProcessingQueueItem:item];
+          @finally {
+            [self finishedProcessingQueueItem:item];
+          }
         }
       }
+    } @finally {
+      [NSThread sleepForTimeInterval:2];
+      [self finishedProcessingQueue];
+      inProgress = NO;
     }
-    
-  } @finally {
-    [NSThread sleepForTimeInterval:2];
-    [self finishedProcessingQueue];
-    inProgress = NO;
-    pthread_mutex_unlock(&queueLock);
   }
 }
 

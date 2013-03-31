@@ -44,13 +44,7 @@
 }
 
 - (void)testAsynchronousQueueProcessing {
-  [[[[queueItem stub] andDo:^(NSInvocation * test) {
-    //for (int i=0; i<5000; i++) {
-    //  NSLog(@"blah!");
-    //}
-    //[NSThread sleepForTimeInterval:2];
-    
-  }] andReturnValue:OCMOCK_VALUE((BOOL){YES})] process];
+  [[[queueItem stub] andReturnValue:OCMOCK_VALUE((BOOL){YES})] process];
   
   [queue processQueueAsynchronously:queueItems];
   
