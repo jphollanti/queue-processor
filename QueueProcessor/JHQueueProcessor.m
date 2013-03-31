@@ -89,17 +89,17 @@ static JHQueueProcessor *sharedSingleton;
 }
 
 - (void) startedProcessingQueue {
-    if ([NSThread isMainThread]) {
-      for (id <JHQueueListener> listener in listeners) {
-        [listener startedProcessingQueue];
-      }
-    } else {
-  dispatch_async(dispatch_get_main_queue(), ^{
+  if ([NSThread isMainThread]) {
     for (id <JHQueueListener> listener in listeners) {
       [listener startedProcessingQueue];
     }
-  });
-    }
+  } else {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      for (id <JHQueueListener> listener in listeners) {
+        [listener startedProcessingQueue];
+      }
+    });
+  }
 }
 
 - (void) finishedProcessingQueue {
@@ -109,40 +109,40 @@ static JHQueueProcessor *sharedSingleton;
     }
     
   } else {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    for (id <JHQueueListener> listener in listeners) {
-      [listener finishedProcessingQueue];
-    }
-  });
+    dispatch_async(dispatch_get_main_queue(), ^{
+      for (id <JHQueueListener> listener in listeners) {
+        [listener finishedProcessingQueue];
+      }
+    });
   }
 }
 
 - (void) startedToProcessQueueItem:(id <JHQueueItem>)queueItem {
-    if ([NSThread isMainThread]) {
-      for (id <JHQueueListener> listener in listeners) {
-        [listener startedToProcessQueueItem:queueItem];
-      }
-    } else {
-  dispatch_async(dispatch_get_main_queue(), ^{
+  if ([NSThread isMainThread]) {
     for (id <JHQueueListener> listener in listeners) {
       [listener startedToProcessQueueItem:queueItem];
     }
-  });
-    }
+  } else {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      for (id <JHQueueListener> listener in listeners) {
+        [listener startedToProcessQueueItem:queueItem];
+      }
+    });
+  }
 }
 
 - (void) finishedProcessingQueueItem:(id <JHQueueItem>)queueItem {
-      if ([NSThread isMainThread]) {
-        for (id <JHQueueListener> listener in listeners) {
-          [listener finishedProcessingQueueItem:queueItem];
-        }
-      } else {
-  dispatch_async(dispatch_get_main_queue(), ^{
+  if ([NSThread isMainThread]) {
     for (id <JHQueueListener> listener in listeners) {
       [listener finishedProcessingQueueItem:queueItem];
     }
-  });
+  } else {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      for (id <JHQueueListener> listener in listeners) {
+        [listener finishedProcessingQueueItem:queueItem];
       }
+    });
+  }
 }
 
 @end
