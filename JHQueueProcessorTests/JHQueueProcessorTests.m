@@ -66,7 +66,31 @@
   [listener verify];
 }
 
-- (void)testSynchronousQueueProcessing {  
+/*
+ - (void)testAsynchronousQueueLocking {
+ queueItems = [NSArray arrayWithObject:queueItem];
+ 
+ [[[[queueItem stub] andDo:^(NSInvocation *invocation) {
+ usleep(3000000);
+ }] andReturnValue:OCMOCK_VALUE((BOOL){YES})] process];
+ 
+ [queue processQueueAsynchronously:queueItems];
+ usleep(10000);
+ STAssertThrows([queue processQueueAsynchronously:queueItems], @"second call to process queue should throw an exception");
+ 
+ while ([queue isInProgress]) {
+ // This executes another run loop.
+ [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+ // Sleep 1/100th sec
+ usleep(10000);
+ }
+ 
+ [queueItem verify];
+ [listener verify];
+ }
+*/
+
+- (void)testSynchronousQueueProcessing {
   [[[queueItem stub] andReturnValue:OCMOCK_VALUE((BOOL){YES})] process];
   
   [queue processQueue:queueItems];
